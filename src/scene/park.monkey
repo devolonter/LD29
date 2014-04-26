@@ -15,7 +15,7 @@ Class Park Extends BaseScene
 	End Method
 	
 	Method OnActivate:Void()
-		FlxG.SetBgColor(FlxG.GREEN)
+		FlxG.Camera.BgColor = FlxG.GREEN
 	End Method
 	
 End Class
