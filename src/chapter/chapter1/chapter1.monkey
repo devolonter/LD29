@@ -1,7 +1,7 @@
 Strict
 
 Import src.chapter
-Import src.interactable.actionablesprite
+Import src.interactable.takeablesprite
 
 
 Class Chapter1 Extends Chapter
@@ -20,7 +20,7 @@ Class Chapter1 Extends Chapter
 
 End Class
 
-Class Item Extends ActionableSprite
+Class Item Extends TakeableSprite
 
 	Method New(x:Float, y:Float)
 		Super.New(x, y)
@@ -30,8 +30,7 @@ Class Item Extends ActionableSprite
 		Color = FlxG.PINK
 		
 		SetRenderer(New RectSpriteRenderer())
-		
-		SetAction("Hello",[New Action("Yes", Null)])
+		Name = "Potato"
 	End Method
 
 End Class
