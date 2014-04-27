@@ -1,9 +1,13 @@
 Strict
 
 Import flixel
+
 Import src.game
+Import src.playstate
 
 Class BaseScene Extends FlxSubState
+
+	Field state:PlayState
 
 	Field background:FlxSprite
 
@@ -18,7 +22,12 @@ Class BaseScene Extends FlxSubState
 		Add(background)
 	End Method
 	
+	Method OnActivate:Void()
+		state = PlayState(GetParent())
+	End Method
+	
 	Method OnClose:Bool(system:Bool)
+		state.ClearInteractable()
 		Return True
 	End Method
 	

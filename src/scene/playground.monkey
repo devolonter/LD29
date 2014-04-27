@@ -1,21 +1,27 @@
 Strict
 
 Import flixel
-
-Private
-
 Import base
 
-Public
-
 Class Playground Extends BaseScene
+
+	Field triggerGoToOutdoors:GotToScene
 
 	Method Create:Void()
 		Super.Create()
 	End Method
 	
 	Method OnActivate:Void()
-		FlxG.SetBgColor(FlxG.WHITE)
+		Super.OnActivate()
+		
+		If ( Not triggerGoToOutdoors) Then
+			triggerGoToOutdoors = New GotToScene(state, state.outdoors)
+			triggerGoToOutdoors.Reset(0, FlxG.Height - Game.SCREEN_PADDING - triggerGoToOutdoors.height)
+		End If
+		
+		state.AddInteractable(triggerGoToOutdoors)
+		
+		background.Color = $FF414478
 	End Method
 	
 End Class

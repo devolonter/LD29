@@ -44,6 +44,8 @@ Class Dialog Extends FlxGroup
 			actions[i].visible = False
 			Add(actions[i])
 		Next
+		
+		visible = False
 	End Method
 	
 	Method Push:Void(message:String, actions:Action[])
