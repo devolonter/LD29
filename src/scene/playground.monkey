@@ -11,7 +11,7 @@ Public
 Class Playground Extends BaseScene
 
 	Method Create:Void()
-		'TODO	
+		Super.Create()
 	End Method
 	
 	Method OnActivate:Void()

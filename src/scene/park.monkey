@@ -11,11 +11,11 @@ Public
 Class Park Extends BaseScene
 
 	Method Create:Void()
-		'TODO	
+		Super.Create()
 	End Method
 	
 	Method OnActivate:Void()
-		FlxG.Camera.BgColor = FlxG.GREEN
+		background.Color = $FF214478
 	End Method
 	
 End Class

@@ -2,14 +2,13 @@ Strict
 
 Import flixel
 
-Import basestate
-Import dialogbar
+Import dialog
 
 Import scene.park
 Import scene.outdoors
 Import scene.playground
 
-Class PlayState Extends BaseState
+Class PlayState Extends FlxState
 
 	Field park:Park
 	
@@ -17,18 +16,31 @@ Class PlayState Extends BaseState
 	
 	Field playground:Playground
 	
-	Field dialog:DialogBar
+	Field dialog:Dialog
+	
+	Method New()
+		persistentUpdate = True
+	End Method
 	
 	Method Create:Void()
-		Super.Create()
-	
 		park = New Park()
 		outdoors = New Outdoors()
 		playground = New Playground()
 		
-		dialog = New DialogBar()
+		dialog = New Dialog()
+		Add(dialog)
 	
 		SetSubState(park)
+	End Method
+	
+	Method DoDraw:Void()
+		If (GetSubState() = Null) Then
+			Draw()
+			Return
+		End If
+
+		GetSubState().Draw()
+		Draw()
 	End Method
 
 End Class

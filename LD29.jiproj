@@ -29,14 +29,14 @@
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\src\basestate.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\action.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\src\dialogbar.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\dialog.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
