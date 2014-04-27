@@ -1,7 +1,7 @@
 Strict
 
 Import flixel
-Import game
+Import src.game
 
 Class Action Implements FlxButtonClickListener
 	

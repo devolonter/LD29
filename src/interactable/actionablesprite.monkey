@@ -2,8 +2,8 @@ Strict
 
 Import flixel
 Import interactable
+Import action
 Import src.assets
-Import src.action
 Import src.game
 
 Class ActionableSprite Extends FlxSprite Implements Interactable
