@@ -47,6 +47,10 @@ Class PlayState Extends FlxState
 	Method Update:Void()
 		Super.Update()
 		
+		If (Game.Dialog.visible) Then
+			Return
+		End If
+		
 		FlxG.Mouse.GetScreenPosition(Null, pointer)
 
 		For Local b:FlxBasic = EachIn interactable

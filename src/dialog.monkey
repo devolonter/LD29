@@ -2,7 +2,7 @@ Strict
 
 Import flixel
 Import game
-Import action
+Import src.interactable.action
 
 Class Dialog Extends FlxGroup
 

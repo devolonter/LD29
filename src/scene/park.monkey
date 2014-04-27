@@ -24,7 +24,6 @@ Class Park Extends BaseScene
 		Super.OnActivate()
 
 		state.AddInteractable(triggerGoToOutdoors)
-		background.Color = $FF214478
 	End Method
 	
 End Class

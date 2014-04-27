@@ -1,36 +1,41 @@
 Strict
 
 Import src.chapter
-Import src.interactable.takeablesprite
 
+Private
+
+Import assets
+Import boy
+Import girl
+Import train
+
+Public
 
 Class Chapter1 Extends Chapter
 
+	Global Boy:Boy
+	
+	Global Girl:Girl
+
 	Method New(state:PlayState)
 		Super.New(state)
+		
+		ChapterAssets.Init()
+		ChapterAssets.Load()
 	End Method
 	
 	Method Create:Void()
 		Super.Create()
 		
-		state.park.AddItem(New Item(50, Game.SCREEN_PADDING + 50))
+		Chapter1.Boy = New Boy(100, Game.SCREEN_PADDING + 135)
+		Chapter1.Girl = New Girl(390, Game.SCREEN_PADDING + 130)
 		
-		state.SetSubState(state.park)
-	End Method
-
-End Class
-
-Class Item Extends TakeableSprite
-
-	Method New(x:Float, y:Float)
-		Super.New(x, y)
+		state.playground.AddItem(Chapter1.Boy)
+		state.playground.AddItem(Chapter1.Girl)
 		
-		width = 100
-		height = 100
-		Color = FlxG.PINK
+		state.playground.AddItem(New Train(220, Game.SCREEN_PADDING + 250))
 		
-		SetRenderer(New RectSpriteRenderer())
-		Name = "Potato"
+		state.SetSubState(state.playground)
 	End Method
 
 End Class

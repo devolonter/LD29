@@ -27,8 +27,6 @@ Class Outdoors Extends BaseScene
 		
 		state.AddInteractable(triggerGoToPark)
 		state.AddInteractable(triggerGoToPlayground)
-		
-		background.Color = $FF314478
 	End Method
 	
 End Class

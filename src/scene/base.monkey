@@ -4,12 +4,13 @@ Import flixel
 
 Import src.game
 Import src.playstate
+Import background
 
 Class BaseScene Extends FlxSubState
 
 	Field state:PlayState
 
-	Field background:FlxSprite
+	Field background:Background
 	
 	Field items:FlxGroup
 	
@@ -19,12 +20,7 @@ Class BaseScene Extends FlxSubState
 	End Method
 
 	Method Create:Void()
-		background = New FlxSprite(0, Game.SCREEN_PADDING)
-		
-		background.width = FlxG.Width
-		background.height = FlxG.Height - Game.SCREEN_PADDING * 2
-		
-		background.SetRenderer(New RectSpriteRenderer())
+		background = New Background(0, Game.SCREEN_PADDING)
 		
 		Add(background)
 		Add(items)
