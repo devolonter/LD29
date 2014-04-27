@@ -1,6 +1,7 @@
 Strict
 
 Import flixel
+Import game
 
 Class Action Implements FlxButtonClickListener
 	
@@ -14,7 +15,8 @@ Class Action Implements FlxButtonClickListener
 	End Method
 	
 	Method OnButtonClick:Void(button:FlxButton)
-		listener.OnAction(Self)
+		Game.Dialog.Pop()
+		If (listener) listener.OnAction(Self)
 	End Method
 
 End Class

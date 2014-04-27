@@ -64,6 +64,12 @@ Class Dialog Extends FlxGroup
 			Self.actions[i].label.Text = actions[i].title
 			Self.actions[i].onUp = actions[i]
 		Next
+		
+		visible = True
+	End Method
+	
+	Method Pop:Void()
+		visible = False
 	End Method
 
 End Class

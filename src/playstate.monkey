@@ -20,8 +20,6 @@ Class PlayState Extends FlxState
 	
 	Field playground:Playground
 	
-	Field dialog:Dialog
-	
 	Field interactable:FlxGroup
 	
 	Field pointer:FlxPoint
@@ -39,8 +37,8 @@ Class PlayState Extends FlxState
 		outdoors = New Outdoors(Self)
 		playground = New Playground(Self)
 		
-		dialog = New Dialog()
-		Add(dialog)
+		Game.Dialog = New Dialog()
+		Add(Game.Dialog)
 	
 		Game.Chapter = New Chapter1(Self)
 		Game.Chapter.Create()

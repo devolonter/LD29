@@ -27,9 +27,11 @@ Class Item Extends ActionableSprite
 		
 		width = 100
 		height = 100
+		Color = FlxG.PINK
+		
 		SetRenderer(New RectSpriteRenderer())
 		
-		Color = FlxG.PINK
+		SetAction("Hello",[New Action("Yes", Null)])
 	End Method
 
 End Class

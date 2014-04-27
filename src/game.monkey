@@ -11,6 +11,8 @@ Class Game Extends FlxGame
 	
 	Global Chapter:Chapter
 	
+	Global Dialog:Dialog
+	
 	Method New()
 		Super.New(640, 480, GetClass("PlayState"), 1, 60, False)
 	End Method
