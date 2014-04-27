@@ -36,6 +36,20 @@
         <Y>0</Y>
       </CursorPos>
     </Document>
+    <Document Filename=".\src\interactable\gotoscene.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\src\interactable\interactable.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
     <Document Filename=".\src\scene\base.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
@@ -58,20 +72,6 @@
       </CursorPos>
     </Document>
     <Document Filename=".\src\scene\playground.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
-      <DocGUID />
-      <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
-      </CursorPos>
-    </Document>
-    <Document Filename=".\src\trigger\gotoscene.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
-      <DocGUID />
-      <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
-      </CursorPos>
-    </Document>
-    <Document Filename=".\src\trigger\interactable.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>

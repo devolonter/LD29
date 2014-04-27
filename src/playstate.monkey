@@ -8,7 +8,7 @@ Import scene.park
 Import scene.outdoors
 Import scene.playground
 
-Import trigger.gotoscene
+Import interactable.gotoscene
 
 Import chapter.chapter1
 
