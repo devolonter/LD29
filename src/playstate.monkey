@@ -35,9 +35,9 @@ Class PlayState Extends FlxState
 		
 		pointer = New FlxPoint()
 	
-		park = New Park()
-		outdoors = New Outdoors()
-		playground = New Playground()
+		park = New Park(Self)
+		outdoors = New Outdoors(Self)
+		playground = New Playground(Self)
 		
 		dialog = New Dialog()
 		Add(dialog)

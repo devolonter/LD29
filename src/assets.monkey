@@ -11,7 +11,7 @@ Class Assets
 	Function Init:Void()
 		FlxAssetsManager.AddCursor(CURSOR_DEFAULT, "ui/mouse/default.png")
 		FlxAssetsManager.AddCursor(CURSOR_GO, "ui/mouse/go.png")
-		FlxAssetsManager.AddCursor(CURSOR_VIEW, "ui/mouse/go.png")
+		FlxAssetsManager.AddCursor(CURSOR_VIEW, "ui/mouse/view.png")
 	End Function
 	
 	Function Load:Void()
