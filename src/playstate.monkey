@@ -10,6 +10,8 @@ Import scene.playground
 
 Import trigger.gotoscene
 
+Import chapter.chapter1
+
 Class PlayState Extends FlxState
 
 	Field park:Park
@@ -40,7 +42,8 @@ Class PlayState Extends FlxState
 		dialog = New Dialog()
 		Add(dialog)
 	
-		SetSubState(park)
+		Game.Chapter = New Chapter1(Self)
+		Game.Chapter.Create()
 	End Method
 	
 	Method Update:Void()

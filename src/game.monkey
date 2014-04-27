@@ -9,6 +9,8 @@ Class Game Extends FlxGame
 
 	Const SCREEN_PADDING:Int = 80
 	
+	Global Chapter:Chapter
+	
 	Method New()
 		Super.New(640, 480, GetClass("PlayState"), 1, 60, False)
 	End Method

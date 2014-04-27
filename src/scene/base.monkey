@@ -10,9 +10,12 @@ Class BaseScene Extends FlxSubState
 	Field state:PlayState
 
 	Field background:FlxSprite
+	
+	Field items:FlxGroup
 
 	Method Create:Void()
 		background = New FlxSprite(0, Game.SCREEN_PADDING)
+		items = New FlxGroup()
 		
 		background.width = FlxG.Width
 		background.height = FlxG.Height - Game.SCREEN_PADDING * 2
