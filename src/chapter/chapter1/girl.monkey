@@ -3,6 +3,7 @@ Strict
 Import src.interactable.actionablesprite
 Import src.interactable.action.leave
 Import src.player
+Import scripts
 
 Private
 
@@ -44,8 +45,12 @@ Class Girl Extends ActionableSprite Implements ActionListener
 	Method OnAction:Void(action:Action)
 		Select action
 			Case giveTrain
+				Player.Items.Remove("train")
+			
 				Chapter1.Boy.train.Reset(480, 195 + Game.SCREEN_PADDING)
-				Game.Chapter.state.RemoveInteractable(Self)
+				Game.Chapter.state.RemoveInteractable(Self, True)
+				
+				New ScriptBoyInYard(Game.Chapter.state.outdoors)
 		End Select
 	End Method
 

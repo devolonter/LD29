@@ -42,12 +42,14 @@ Class BaseScene Extends FlxSubState
 		End If
 		
 		If (script) Then
+			Add(script)
 			script.Run()
 		End If
 	End Method
 	
 	Method OnClose:Bool(system:Bool)
 		If (script) Then
+			Remove(script)
 			script.Stop()
 		End If
 	
@@ -60,6 +62,14 @@ Class BaseScene Extends FlxSubState
 		
 		If (Interactable(item)) Then
 			state.AddInteractable(Interactable(item))
+		End If
+	End Method
+	
+	Method RemoveItem:Void(item:FlxBasic)
+		items.Remove(item)
+		
+		If (Interactable(item)) Then
+			state.RemoveInteractable(Interactable(item))
 		End If
 	End Method
 

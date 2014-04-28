@@ -48,28 +48,30 @@ Class PlayState Extends FlxState
 	Method Update:Void()
 		Super.Update()
 		
-		If (Game.Dialog.visible) Then
+		If (Game.Dialog.visible Or _blocked) Then
 			Return
 		End If
 		
 		FlxG.Mouse.GetScreenPosition(Null, pointer)
+		
+		Local interact:Interactable
 
 		For Local b:FlxBasic = EachIn interactable
+			interact = Interactable(b)
+			If ( Not interact.Enabled()) Continue
+		
 			If (FlxObject(b).OverlapsPoint(pointer)) Then
-			
-				If (b.active) Then
+				If (interact.IsActive()) Then
 					If (FlxG.Mouse.JustPressed()) Then
-						Interactable(b).OnInteract()
+						interact.OnInteract()
 						Return
 					End If
 				Else
-					Interactable(b).OnFocus()
-					b.active = True
+					interact.OnFocus()
 				End If
 				
-			ElseIf(b.active) Then
-				Interactable(b).OnBlur()
-				b.active = False
+			ElseIf(interact.IsActive()) Then
+				interact.OnBlur()
 			End If
 		Next
 	End Method
@@ -88,17 +90,30 @@ Class PlayState Extends FlxState
 		Local b:FlxBasic = FlxBasic(interactable)
 	
 		If (b And FlxObject(b)) Then
-			b.active = False
+			interactable.Flush()
 			Self.interactable.Add(b)
 		End If
 	End Method
 	
-	Method RemoveInteractable:Void(interactable:Interactable)
+	Method RemoveInteractable:Void(interactable:Interactable, disable:Bool = False)
+		If (disable) interactable.Disable()
 		Self.interactable.Remove(FlxBasic(interactable))
 	End Method
 	
 	Method ClearInteractable:Void()
 		interactable.Clear()
 	End Method
+	
+	Method Block:Void()
+		_blocked = True
+	End Method
+	
+	Method Unblock:Void()
+		_blocked = False
+	End Method
+	
+	Private
+	
+	Field _blocked:Bool
 
 End Class
