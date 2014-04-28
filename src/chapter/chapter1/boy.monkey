@@ -5,7 +5,7 @@ Import src.interactable.action.leave
 
 Private
 
-Import assets
+Import chapterassets
 
 Public
 

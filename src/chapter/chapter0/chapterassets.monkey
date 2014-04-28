@@ -4,24 +4,21 @@ Import flixel
 
 Class ChapterAssets
 
-'	Const SPRITE_BOY:String = "chapter1_boy"
-'	Const SPRITE_GIRL:String = "chapter1_girl"
-'	Const SPRITE_TRAIN:String = "chapter1_train"
+	Const SPRITE_KEY:String = "chapter0_key"
+	Const SPRITE_DOOR:String = "chapter0_door"
 	
 	Function Init:Void()
-'		FlxAssetsManager.AddImage(SPRITE_BOY, "chapter/1/boy.png")
-'		FlxAssetsManager.AddImage(SPRITE_GIRL, "chapter/1/girl.png")
-'		FlxAssetsManager.AddImage(SPRITE_TRAIN, "chapter/1/train.png")
+		FlxAssetsManager.AddImage(SPRITE_KEY, "chapter/0/key.png")
+		FlxAssetsManager.AddImage(SPRITE_DOOR, "chapter/0/door.png")
 	End Function
 	
 	Function Load:Void()
-'		Local preloader:FlxSprite = New FlxSprite()
-'		
-'		preloader.LoadGraphic(SPRITE_BOY)
-'		preloader.LoadGraphic(SPRITE_GIRL)
-'		preloader.LoadGraphic(SPRITE_TRAIN)
-'		
-'		preloader.Destroy()
+		Local preloader:FlxSprite = New FlxSprite()
+		
+		preloader.LoadGraphic(SPRITE_KEY)
+		preloader.LoadGraphic(SPRITE_DOOR)
+		
+		preloader.Destroy()
 	End Function
 
 End Class

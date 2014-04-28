@@ -8,6 +8,8 @@ Import src.game
 
 Class ActionableSprite Extends FlxSprite Implements Interactable
 
+	Field name:String
+
 	Field action:SpriteAction
 
 	Method New(x:Float = 0, y:Float = 0, simpleGraphic:String = "")
@@ -29,6 +31,11 @@ Class ActionableSprite Extends FlxSprite Implements Interactable
 	
 	Method OnBlur:Void()
 		FlxG.Mouse.Show(Assets.CURSOR_DEFAULT)
+	End Method
+	
+	Method Kill:Void()
+		Game.Chapter.state.RemoveInteractable(Self)
+		Super.Kill()
 	End Method
 
 End Class

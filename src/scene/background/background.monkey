@@ -19,7 +19,6 @@ Class Background Extends FlxGroup
 	
 	Method Image:Void(graphics:String) Property
 		image.LoadGraphic(graphics)
-		'Add(image)
 	End Method
 	
 	Method AddStars:Void(stars:Int[])

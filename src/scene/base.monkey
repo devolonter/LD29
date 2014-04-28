@@ -17,10 +17,11 @@ Class BaseScene Extends FlxSubState
 	Method New(state:PlayState)
 		Self.state = state
 		items = New FlxGroup()
-		background = New Background(0, Game.SCREEN_PADDING)
 	End Method
 
 	Method Create:Void()
+		background = New Background(0, Game.SCREEN_PADDING)
+	
 		Add(background)
 		Add(items)
 	End Method
@@ -31,6 +32,11 @@ Class BaseScene Extends FlxSubState
 				state.AddInteractable(Interactable(b))
 			End If
 		Next
+		
+		If (_PrevChapter <> Game.Chapter) Then
+			_PrevChapter = Game.Chapter
+			Game.Chapter.Activate()
+		End If
 	End Method
 	
 	Method OnClose:Bool(system:Bool)
@@ -45,5 +51,9 @@ Class BaseScene Extends FlxSubState
 			state.AddInteractable(Interactable(item))
 		End If
 	End Method
+	
+	Private
+	
+	Global _PrevChapter:Chapter
 	
 End Class

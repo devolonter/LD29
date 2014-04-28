@@ -4,7 +4,7 @@ Import src.chapter
 
 Private
 
-Import assets
+Import chapterassets
 Import boy
 Import girl
 Import train

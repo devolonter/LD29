@@ -17,6 +17,9 @@ Class Chapter
 	Method Create:Void()
 	End Method
 	
+	Method Activate:Void()
+	End Method
+	
 	Method Complete:Void()
 		For Local b:FlxBasic = EachIn state.park.items
 			b.Destroy()

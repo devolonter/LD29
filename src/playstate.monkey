@@ -92,6 +92,10 @@ Class PlayState Extends FlxState
 		End If
 	End Method
 	
+	Method RemoveInteractable:Void(interactable:Interactable)
+		Self.interactable.Remove(FlxBasic(interactable))
+	End Method
+	
 	Method ClearInteractable:Void()
 		interactable.Clear()
 	End Method

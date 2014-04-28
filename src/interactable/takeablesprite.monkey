@@ -2,6 +2,7 @@ Strict
 
 Import actionablesprite
 Import src.interactable.action.take
+Import src.player
 
 
 Class TakeableSprite Extends ActionableSprite Implements ActionListener
@@ -15,11 +16,12 @@ Class TakeableSprite Extends ActionableSprite Implements ActionListener
 		SetAction(_action)
 	End Method
 	
-	Method Name:Void(name:String) Property
-		_action.message = name
+	Method Description:Void(desc:String) Property
+		_action.message = desc
 	End Method
 	
 	Method OnAction:Void(action:Action)
+		Player.Items.Insert(name)
 		Kill()
 	End Method
 	

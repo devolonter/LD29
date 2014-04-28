@@ -4,7 +4,7 @@ Import flixel
 
 Private
 
-Import assets
+Import chapterassets
 
 Public
 
