@@ -20,13 +20,16 @@ Class Outdoors Extends BaseScene
 		
 		triggerGoToPlayground = New GoToScene(state, state.playground)
 		triggerGoToPlayground.Reset(FlxG.Width - triggerGoToPlayground.width, FlxG.Height - Game.SCREEN_PADDING - triggerGoToPark.height)
+		
+		background.AddStars([18, 45, 421, 23, 584, 44])
 	End Method
 	
 	Method OnActivate:Void()
-		Super.OnActivate()
-		
 		state.AddInteractable(triggerGoToPark)
 		state.AddInteractable(triggerGoToPlayground)
+		background.Image = Assets.SCENE_OUTDOORS
+	
+		Super.OnActivate()
 	End Method
 	
 End Class

@@ -24,6 +24,7 @@ Class Park Extends BaseScene
 	
 	Method OnActivate:Void()
 		state.AddInteractable(triggerGoToOutdoors)
+		background.Image = Assets.SCENE_PARK
 		
 		Super.OnActivate()
 	End Method

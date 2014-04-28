@@ -21,11 +21,10 @@ Class Playground Extends BaseScene
 	End Method
 	
 	Method OnActivate:Void()
+		state.AddInteractable(triggerGoToOutdoors)
 		background.Image = Assets.SCENE_PLAYGROUND
 		
 		Super.OnActivate()
-			
-		state.AddInteractable(triggerGoToOutdoors)
 	End Method
 	
 End Class
