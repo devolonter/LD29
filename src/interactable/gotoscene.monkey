@@ -6,7 +6,7 @@ Import interactable
 Import src.assets
 Import src.game
 
-Class GotToScene Extends FlxObject Implements Interactable
+Class GoToScene Extends FlxObject Implements Interactable
 
 	Field parent:PlayState
 	

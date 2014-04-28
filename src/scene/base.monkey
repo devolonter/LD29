@@ -28,7 +28,7 @@ Class BaseScene Extends FlxSubState
 	
 	Method OnActivate:Void()
 		For Local b:FlxBasic = EachIn items
-			If (Interactable(b)) Then
+			If (b.exists And Interactable(b)) Then
 				state.AddInteractable(Interactable(b))
 			End If
 		Next

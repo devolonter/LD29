@@ -37,5 +37,10 @@ Class Chapter1 Extends Chapter
 		
 		state.SetSubState(state.playground)
 	End Method
+	
+	Method Activate:Void()
+		state.park.background.Image = Assets.SCENE_PARK
+		state.RemoveInteractable(state.park.triggerGoToOutdoors)
+	End Method
 
 End Class

@@ -5,7 +5,7 @@ Import base
 
 Class Playground Extends BaseScene
 
-	Field triggerGoToOutdoors:GotToScene
+	Field triggerGoToOutdoors:GoToScene
 	
 	Method New(state:PlayState)
 		Super.New(state)
@@ -14,7 +14,7 @@ Class Playground Extends BaseScene
 	Method Create:Void()
 		Super.Create()
 		
-		triggerGoToOutdoors = New GotToScene(state, state.outdoors)
+		triggerGoToOutdoors = New GoToScene(state, state.outdoors)
 		triggerGoToOutdoors.Reset(0, FlxG.Height - Game.SCREEN_PADDING - triggerGoToOutdoors.height)
 		
 		background.AddStars([60, 20, 235, 70, 280, 27, 360, 45, 430, 28, 605, 20])

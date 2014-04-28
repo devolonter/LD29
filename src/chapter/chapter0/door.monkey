@@ -1,8 +1,12 @@
 Strict
 
 Import src.player
+
 Import src.interactable.actionablesprite
 Import src.interactable.action.leave
+Import src.interactable.gotoscene
+
+Import src.chapter.chapter1
 
 Private
 
@@ -19,7 +23,7 @@ Class Door Extends ActionableSprite Implements ActionListener
 		
 		actions = New StringMap<SpriteAction>()
 		actions.Set("default", New SpriteAction("Closed door",[Action(New LeaveAction())]))
-		actions.Set("open", New SpriteAction("Closed door",[Action(New OpenAction(Self))]))
+		actions.Set("open", New SpriteAction("Closed door",[New Action("Open", Self)]))
 		
 		SetAction(actions.Get("default"))
 	End Method
@@ -34,17 +38,25 @@ Class Door Extends ActionableSprite Implements ActionListener
 	
 	Method OnAction:Void(action:Action)
 		Kill()
-		Game.Chapter.state.AddInteractable(Game.Chapter.state.park.triggerGoToOutdoors)
+		Game.Chapter.state.AddInteractable(New StartGame(Game.Chapter.state, Game.Chapter.state.outdoors))
 	End Method
 
 End Class
 
 Private
 
-Class OpenAction Extends Action
+Class StartGame Extends GoToScene
+
+	Method New(parent:PlayState, scene:BaseScene)
+		Super.New(parent, scene)
+		Self.Reset(FlxG.Width - width, FlxG.Height - Game.SCREEN_PADDING - height)
+	End Method
 	
-	Method New(listener:ActionListener)
-		Super.New("Open", listener)
+	Method OnInteract:Void()		
+		Game.Chapter = New Chapter1(parent)
+		Game.Chapter.Create()
+		
+		Super.OnInteract()
 	End Method
 
 End Class
