@@ -23,7 +23,7 @@ Class Door Extends ActionableSprite Implements ActionListener
 		
 		actions = New StringMap<SpriteAction>()
 		actions.Set("default", New SpriteAction("Closed door",[Action(New LeaveAction())]))
-		actions.Set("open", New SpriteAction("Closed door",[New Action("Open", Self)]))
+		actions.Set("open", New SpriteAction("Closed door",[Action(New LeaveAction()), New Action("Open", Self)]))
 		
 		SetAction(actions.Get("default"))
 	End Method

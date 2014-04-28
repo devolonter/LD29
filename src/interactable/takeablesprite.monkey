@@ -2,6 +2,7 @@ Strict
 
 Import actionablesprite
 Import src.interactable.action.take
+Import src.interactable.action.leave
 Import src.player
 
 
@@ -11,7 +12,7 @@ Class TakeableSprite Extends ActionableSprite Implements ActionListener
 		Super.New(x, y, simpleGraphic)
 		
 		_action = New SpriteAction()
-		_action.actions =[Action(New TakeAction(Self))]
+		_action.actions =[Action(New LeaveAction()), Action(New TakeAction(Self))]
 		
 		SetAction(_action)
 	End Method
