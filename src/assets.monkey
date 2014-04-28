@@ -12,13 +12,19 @@ Class Assets
 	Const CURSOR_GO:String = "go"
 	Const CURSOR_VIEW:String = "view"
 	
+	Const FONT_DIALOG:String = "dialog"
+	Const FONT_BUTTON:String = "button"
+	
 	Function Init:Void()
 		FlxAssetsManager.AddCursor(CURSOR_DEFAULT, "ui/mouse/default.png")
 		FlxAssetsManager.AddCursor(CURSOR_GO, "ui/mouse/go.png")
 		FlxAssetsManager.AddCursor(CURSOR_VIEW, "ui/mouse/view.png")
 		
-		Local font:FlxFont = FlxAssetsManager.AddFont("dialog")
+		Local font:FlxFont = FlxAssetsManager.AddFont(FONT_DIALOG)
 		font.SetPath(16, "ui/font/dialog")
+		
+		font = FlxAssetsManager.AddFont(FONT_BUTTON)
+		font.SetPath(16, "ui/font/button")
 		
 		FlxAssetsManager.AddImage(SCENE_PLAYGROUND, "scene/playground.png")
 		FlxAssetsManager.AddImage(SPRITE_STAR, "scene/detail/star.png")

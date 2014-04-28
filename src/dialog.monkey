@@ -2,6 +2,7 @@ Strict
 
 Import flixel
 Import game
+Import button
 Import src.interactable.action
 
 Class Dialog Extends FlxGroup
@@ -10,7 +11,7 @@ Class Dialog Extends FlxGroup
 
 	Field phrase:FlxText
 	
-	Field actions:FlxButton[2]
+	Field actions:Button[2]
 	
 	Method New()
 		background = New FlxSprite(20, FlxG.Height - Game.SCREEN_PADDING - 50)
@@ -26,21 +27,14 @@ Class Dialog Extends FlxGroup
 		Add(background)
 	
 		phrase = New FlxText(background.x + 10, background.y + 5, FlxG.Width - 40, "<< PHRASE >>")
-		phrase.SetFormat("dialog", 16, FlxG.WHITE)
+		phrase.SetFormat(Assets.FONT_DIALOG, 16, FlxG.WHITE)
 		
 		Add(phrase)
 		
 		Local l:Int = actions.Length()
-		Local title:String
 		
 		For Local i:Int = 0 Until l
-			If (i = 0) Then
-				title = "Yes"
-			Else
-				title = "No"
-			End If
-		
-			actions[i] = New FlxButton(background.x + background.width - i * 100 - 90, FlxG.Height - 50, title)
+			actions[i] = New Button(0, FlxG.Height - 50, " ")
 			actions[i].visible = False
 			Add(actions[i])
 		Next
@@ -59,10 +53,18 @@ Class Dialog Extends FlxGroup
 		
 		l = actions.Length()
 		
+		Local offset:Int = background.x + background.width - 90
+		
 		For Local i:Int = 0 Until l
 			Self.actions[i].visible = True
-			Self.actions[i].label.Text = actions[i].title
+			Self.actions[i].Label = actions[i].title
 			Self.actions[i].onUp = actions[i]
+			Self.actions[i].x = offset
+			Self.actions[i].Update()
+			
+			If (i + 1 < l) Then
+				offset -= Self.actions[i].width + 15
+			End If
 		Next
 		
 		visible = True
