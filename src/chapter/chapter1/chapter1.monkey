@@ -8,6 +8,7 @@ Import chapterassets
 Import boy
 Import girl
 Import train
+Import scripts
 
 Public
 

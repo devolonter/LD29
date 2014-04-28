@@ -7,6 +7,7 @@ Class ChapterAssets
 	Const SPRITE_BOY:String = "chapter1_boy"
 	Const SPRITE_BOY_YARD:String = "chapter1_boy_yard"
 	Const SPRITE_GIRL:String = "chapter1_girl"
+	Const SPRITE_SAMARA_WALK:String = "chapter1_samara_walk"
 	Const SPRITE_TRAIN:String = "chapter1_train"
 	Const SPRITE_WHISTLE_IDLE:String = "chapter1_whistle_idle"
 	Const SPRITE_WHISTLE_ON:String = "chapter1_whistle_on"
@@ -15,6 +16,7 @@ Class ChapterAssets
 		FlxAssetsManager.AddImage(SPRITE_BOY, "chapter/1/boy.png")
 		FlxAssetsManager.AddImage(SPRITE_BOY_YARD, "chapter/1/boy_yard.png")
 		FlxAssetsManager.AddImage(SPRITE_GIRL, "chapter/1/girl.png")
+		FlxAssetsManager.AddImage(SPRITE_SAMARA_WALK, "chapter/1/samara_walk.png")
 		FlxAssetsManager.AddImage(SPRITE_TRAIN, "chapter/1/train.png")
 		FlxAssetsManager.AddImage(SPRITE_WHISTLE_IDLE, "chapter/1/whistle_idle.png")
 		FlxAssetsManager.AddImage(SPRITE_WHISTLE_ON, "chapter/1/whistle_on.png")

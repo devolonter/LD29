@@ -5,6 +5,7 @@ Import flixel
 Import src.game
 Import src.playstate
 Import src.interactable.script
+Import src.interactable.script.gameover
 Import background
 
 Class BaseScene Extends FlxSubState
@@ -16,6 +17,8 @@ Class BaseScene Extends FlxSubState
 	Field items:FlxGroup
 	
 	Field script:Script
+	
+	Field gameOverTimer:Float
 	
 	Method New(state:PlayState)
 		Self.state = state
@@ -29,7 +32,23 @@ Class BaseScene Extends FlxSubState
 		Add(items)
 	End Method
 	
+	Method Update:Void()
+		Super.Update()
+		
+		If (gameOverTimer > 0)
+			gameOverTimer -= FlxG.Elapsed
+			
+			If (gameOverTimer <= 0) Then
+				New ScriptGameOver(state.park)
+				state.SetSubState(state.park)
+			End If
+		End If
+	End Method
+	
 	Method OnActivate:Void()
+		background.visible = True
+		items.visible = True
+	
 		For Local b:FlxBasic = EachIn items
 			If (b.exists And Interactable(b)) Then
 				state.AddInteractable(Interactable(b))
@@ -71,6 +90,15 @@ Class BaseScene Extends FlxSubState
 		If (Interactable(item)) Then
 			state.RemoveInteractable(Interactable(item))
 		End If
+	End Method
+	
+	Method GameOver:Void()
+		gameOverTimer = 3
+		
+		background.visible = False
+		items.visible = False
+		
+		state.ClearInteractable()
 	End Method
 
 	Private
