@@ -17,6 +17,9 @@ Class Assets
 		FlxAssetsManager.AddCursor(CURSOR_GO, "ui/mouse/go.png")
 		FlxAssetsManager.AddCursor(CURSOR_VIEW, "ui/mouse/view.png")
 		
+		Local font:FlxFont = FlxAssetsManager.AddFont("dialog")
+		font.SetPath(16, "ui/font/dialog")
+		
 		FlxAssetsManager.AddImage(SCENE_PLAYGROUND, "scene/playground.png")
 		FlxAssetsManager.AddImage(SPRITE_STAR, "scene/detail/star.png")
 	End Function

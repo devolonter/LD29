@@ -26,7 +26,7 @@ Class Dialog Extends FlxGroup
 		Add(background)
 	
 		phrase = New FlxText(background.x + 10, background.y + 5, FlxG.Width - 40, "<< PHRASE >>")
-		phrase.SetFormat(FlxText.SYSTEM_FONT, 12, FlxG.WHITE)
+		phrase.SetFormat("dialog", 16, FlxG.WHITE)
 		
 		Add(phrase)
 		
