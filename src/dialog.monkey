@@ -26,7 +26,7 @@ Class Dialog Extends FlxGroup
 		
 		Add(background)
 	
-		phrase = New FlxText(background.x + 10, background.y + 5, FlxG.Width - 40, "<< PHRASE >>")
+		phrase = New FlxText(background.x + 10, background.y + 3, FlxG.Width - 50, "<< PHRASE >>")
 		phrase.SetFormat(Assets.FONT_DIALOG, 16, FlxG.WHITE)
 		
 		Add(phrase)
@@ -53,18 +53,17 @@ Class Dialog Extends FlxGroup
 		
 		l = actions.Length()
 		
-		Local offset:Int = background.x + background.width - 90
+		Local offset:Int = background.x + background.width - 10
 		
 		For Local i:Int = 0 Until l
 			Self.actions[i].visible = True
 			Self.actions[i].Label = actions[i].title
 			Self.actions[i].onUp = actions[i]
+			
+			offset -= Self.actions[i].width + 10
 			Self.actions[i].x = offset
 			Self.actions[i].Update()
-			
-			If (i + 1 < l) Then
-				offset -= Self.actions[i].width + 15
-			End If
+		
 		Next
 		
 		visible = True

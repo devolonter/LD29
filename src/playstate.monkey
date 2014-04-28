@@ -11,6 +11,7 @@ Import scene.playground
 Import interactable.gotoscene
 
 Import chapter.chapter0
+Import chapter.chapter1
 
 Class PlayState Extends FlxState
 
@@ -40,7 +41,7 @@ Class PlayState Extends FlxState
 		Game.Dialog = New Dialog()
 		Add(Game.Dialog)
 	
-		Game.Chapter = New Chapter0(Self)
+		Game.Chapter = New Chapter1(Self)
 		Game.Chapter.Create()
 	End Method
 	

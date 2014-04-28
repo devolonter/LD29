@@ -27,20 +27,23 @@ Class Chapter1 Extends Chapter
 	Method Create:Void()
 		Super.Create()
 		
-		Chapter1.Boy = New Boy(100, Game.SCREEN_PADDING + 135)
+		Chapter1.Boy = New Boy(100, Game.SCREEN_PADDING + 135, New Train(220, Game.SCREEN_PADDING + 250))
 		Chapter1.Girl = New Girl(390, Game.SCREEN_PADDING + 130)
 		
 		state.playground.AddItem(Chapter1.Boy)
 		state.playground.AddItem(Chapter1.Girl)
 		
-		state.playground.AddItem(New Train(220, Game.SCREEN_PADDING + 250))
+		state.playground.AddItem(Chapter1.Boy.train)
 		
 		state.SetSubState(state.playground)
 	End Method
 	
 	Method Activate:Void()
-		state.park.background.Image = Assets.SCENE_PARK
-		state.RemoveInteractable(state.park.triggerGoToOutdoors)
+		'note: TODO Remove this check
+		If (state.park.background) Then
+			state.park.background.Image = Assets.SCENE_PARK
+			state.RemoveInteractable(state.park.triggerGoToOutdoors)
+		End If
 	End Method
 
 End Class

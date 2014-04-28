@@ -15,6 +15,8 @@ Class Button Extends FlxButton
 	
 	Method Label:Void(value:String) Property
 		label.Text = value
+		label.SetWidth(label.GetTextWidth())
+		
 		width = label.width
 		height = label.height
 	End Method
