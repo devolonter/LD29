@@ -17,11 +17,10 @@ Class BaseScene Extends FlxSubState
 	Method New(state:PlayState)
 		Self.state = state
 		items = New FlxGroup()
+		background = New Background(0, Game.SCREEN_PADDING)
 	End Method
 
 	Method Create:Void()
-		background = New Background(0, Game.SCREEN_PADDING)
-		
 		Add(background)
 		Add(items)
 	End Method

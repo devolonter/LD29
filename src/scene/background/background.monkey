@@ -11,8 +11,6 @@ Public
 Class Background Extends FlxGroup
 
 	Field image:FlxSprite
-	
-	Field stars:Star
 
 	Method New(x:Float, y:Float)
 		image = New FlxSprite(x, y)
@@ -21,6 +19,7 @@ Class Background Extends FlxGroup
 	
 	Method Image:Void(graphics:String) Property
 		image.LoadGraphic(graphics)
+		'Add(image)
 	End Method
 	
 	Method AddStars:Void(stars:Int[])

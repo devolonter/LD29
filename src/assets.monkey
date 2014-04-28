@@ -6,6 +6,7 @@ Class Assets
 
 	Const SPRITE_STAR:String = "sprite_star"
 	
+	Const SCENE_TITLE:String = "scene_title"
 	Const SCENE_PLAYGROUND:String = "scene_playground"
 
 	Const CURSOR_DEFAULT:String = "default"
@@ -26,6 +27,7 @@ Class Assets
 		font = FlxAssetsManager.AddFont(FONT_BUTTON)
 		font.SetPath(16, "ui/font/button")
 		
+		FlxAssetsManager.AddImage(SCENE_TITLE, "scene/title.png")
 		FlxAssetsManager.AddImage(SCENE_PLAYGROUND, "scene/playground.png")
 		FlxAssetsManager.AddImage(SPRITE_STAR, "scene/detail/star.png")
 	End Function
@@ -37,6 +39,7 @@ Class Assets
 		
 		Local preloader:FlxSprite = New FlxSprite()
 		
+		preloader.LoadGraphic(SCENE_TITLE)
 		preloader.LoadGraphic(SCENE_PLAYGROUND)
 		preloader.LoadGraphic(SPRITE_STAR)
 		
