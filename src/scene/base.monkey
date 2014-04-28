@@ -4,6 +4,7 @@ Import flixel
 
 Import src.game
 Import src.playstate
+Import src.interactable.script
 Import background
 
 Class BaseScene Extends FlxSubState
@@ -13,6 +14,8 @@ Class BaseScene Extends FlxSubState
 	Field background:Background
 	
 	Field items:FlxGroup
+	
+	Field script:Script
 	
 	Method New(state:PlayState)
 		Self.state = state
@@ -37,9 +40,17 @@ Class BaseScene Extends FlxSubState
 			_PrevChapter = Game.Chapter
 			Game.Chapter.Activate()
 		End If
+		
+		If (script) Then
+			script.Run()
+		End If
 	End Method
 	
 	Method OnClose:Bool(system:Bool)
+		If (script) Then
+			script.Stop()
+		End If
+	
 		state.ClearInteractable()
 		Return True
 	End Method
@@ -51,7 +62,7 @@ Class BaseScene Extends FlxSubState
 			state.AddInteractable(Interactable(item))
 		End If
 	End Method
-	
+
 	Private
 	
 	Global _PrevChapter:Chapter
