@@ -41,7 +41,7 @@ Class PlayState Extends FlxState
 		Game.Dialog = New Dialog()
 		Add(Game.Dialog)
 	
-		Game.Chapter = New Chapter1(Self)
+		Game.Chapter = New Chapter0(Self)
 		Game.Chapter.Create()
 	End Method
 	
@@ -110,6 +110,21 @@ Class PlayState Extends FlxState
 	
 	Method Unblock:Void()
 		_blocked = False
+	End Method
+	
+	Method Reset:Void()
+		#Rem
+		ClearInteractable()
+		park.items.Clear()
+		outdoors.items.Clear()
+		playground.items.Clear()
+		#End
+		
+		Game.Creak.Kill()
+		FlxG.Music.Stop()
+		
+		Player.Items.Clear()
+		FlxG.SwitchState(New PlayState())
 	End Method
 	
 	Private

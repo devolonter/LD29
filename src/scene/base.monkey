@@ -20,6 +20,8 @@ Class BaseScene Extends FlxSubState
 	
 	Field gameOverTimer:Float
 	
+	Field resetTimer:Float
+	
 	Method New(state:PlayState)
 		Self.state = state
 		items = New FlxGroup()
@@ -40,6 +42,13 @@ Class BaseScene Extends FlxSubState
 			
 			If (gameOverTimer <= 0) Then
 				New ScriptGameOver(state.park)
+				state.SetSubState(state.park)
+			End If
+			
+		ElseIf(resetTimer > 0)
+			resetTimer -= FlxG.Elapsed
+			
+			If (resetTimer <= 0) Then
 				state.SetSubState(state.park)
 			End If
 		End If
@@ -93,7 +102,22 @@ Class BaseScene Extends FlxSubState
 	End Method
 	
 	Method GameOver:Void()
+		Game.Creak.FadeOut(2)
+		FlxG.Music.Play()
+		
 		gameOverTimer = 3
+		
+		background.visible = False
+		items.visible = False
+		
+		state.ClearInteractable()
+	End Method
+	
+	Method Reset:Void()
+		Game.Creak.FadeOut(2)
+		FlxG.Music.Play()
+		
+		resetTimer = 3
 		
 		background.visible = False
 		items.visible = False

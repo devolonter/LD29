@@ -35,8 +35,6 @@ Class Chapter1 Extends Chapter
 		state.playground.AddItem(Chapter1.Girl)
 		
 		state.playground.AddItem(Chapter1.Boy.train)
-		
-		state.SetSubState(state.playground)
 	End Method
 	
 	Method Activate:Void()

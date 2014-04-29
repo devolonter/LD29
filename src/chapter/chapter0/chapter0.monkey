@@ -23,6 +23,8 @@ Class Chapter0 Extends Chapter
 	Method Create:Void()
 		Super.Create()
 		
+		Game.Creak = FlxG.Play(Assets.SOUND_CREAK,, True)
+		
 		state.park.AddItem(New Key(490, 353))
 		state.park.AddItem(New Door(560, 181))
 		

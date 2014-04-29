@@ -13,6 +13,8 @@ Class Game Extends FlxGame
 	
 	Global Dialog:Dialog
 	
+	Global Creak:FlxSound
+	
 	Method New()
 		Super.New(640, 480, GetClass("PlayState"), 1, 60, False)
 	End Method
@@ -26,6 +28,10 @@ Class Game Extends FlxGame
 		
 		Assets.Load()
 		FlxG.Mouse.Show(Assets.CURSOR_DEFAULT)
+		
+		BeginRender()
+		Cls(0, 0, 0)
+		EndRender()
 		
 		Return 0
 	End Method

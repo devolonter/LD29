@@ -22,13 +22,18 @@ Class Door Extends ActionableSprite Implements ActionListener
 		Super.New(x, y, ChapterAssets.SPRITE_DOOR)
 		
 		actions = New StringMap<SpriteAction>()
-		actions.Set("default", New SpriteAction("Closed door",[Action(New LeaveAction())]))
-		actions.Set("open", New SpriteAction("Closed door",[Action(New LeaveAction()), New Action("Open", Self)]))
+		actions.Set("default", New SpriteAction("A door in the middle of the park. Am I dreaming?.. Alright, there should be a key somewhere",[Action(New LeaveAction())]))
+		actions.Set("open", New SpriteAction("A door in the middle of the park. Am I dreaming?.. Alright, there should be a key somewhere",[Action(New LeaveAction()), New Action("Open", Self)]))
 		
 		SetAction(actions.Get("default"))
 	End Method
 	
 	Method OnInteract:Void()
+		If ( Not FlxG.Music Or Not FlxG.Music.active) Then
+			Game.Creak.FadeOut(2)
+			FlxG.PlayMusic(Assets.MUSIC_WHISTLE)
+		End If
+	
 		If (Player.Items.Contains("key")) Then
 			SetAction(actions.Get("open"))
 		End If
@@ -37,6 +42,7 @@ Class Door Extends ActionableSprite Implements ActionListener
 	End Method
 	
 	Method OnAction:Void(action:Action)
+		FlxG.Play(ChapterAssets.SOUND_DOOR)
 		Kill()
 		Game.Chapter.state.AddInteractable(New StartGame(Game.Chapter.state, Game.Chapter.state.outdoors))
 	End Method

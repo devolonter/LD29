@@ -18,6 +18,13 @@ Class Assets
 	Const FONT_DIALOG:String = "dialog"
 	Const FONT_BUTTON:String = "button"
 	
+	Const MUSIC_WHISTLE:String = "whistle"
+	
+	Const SOUND_WIND:String = "wind"
+	Const SOUND_SWINGS:String = "swings"
+	Const SOUND_OWL:String = "owl"
+	Const SOUND_CREAK:String = "creak"
+	
 	Function Init:Void()
 		FlxAssetsManager.AddCursor(CURSOR_DEFAULT, "ui/mouse/default.png")
 		FlxAssetsManager.AddCursor(CURSOR_GO, "ui/mouse/go.png")
@@ -34,6 +41,13 @@ Class Assets
 		FlxAssetsManager.AddImage(SCENE_OUTDOORS, "scene/outdoors.png")
 		FlxAssetsManager.AddImage(SCENE_PLAYGROUND, "scene/playground.png")
 		FlxAssetsManager.AddImage(SPRITE_STAR, "scene/detail/star.png")
+		
+		FlxAssetsManager.AddMusic(MUSIC_WHISTLE, "music/whistle.mp3")
+		
+		FlxAssetsManager.AddSound(SOUND_WIND, "fx/wind.mp3")
+		FlxAssetsManager.AddSound(SOUND_SWINGS, "fx/swings.mp3")
+		FlxAssetsManager.AddSound(SOUND_OWL, "fx/owl.mp3")
+		FlxAssetsManager.AddSound(SOUND_CREAK, "fx/creak.mp3")
 	End Function
 	
 	Function Load:Void()

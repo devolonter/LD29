@@ -9,6 +9,8 @@ Class Park Extends BaseScene
 
 	Field triggerGoToOutdoors:GoToScene
 	
+	Field isActivated:Bool
+	
 	Method New(state:PlayState)
 		Super.New(state)
 	End Method
@@ -25,6 +27,12 @@ Class Park Extends BaseScene
 	Method OnActivate:Void()
 		state.AddInteractable(triggerGoToOutdoors)
 		background.Image = Assets.SCENE_PARK
+		
+		If (isActivated) Then
+			FlxG.Play(Assets.SOUND_OWL)
+		Else
+			isActivated = True
+		End If
 		
 		Super.OnActivate()
 	End Method

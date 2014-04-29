@@ -3,6 +3,7 @@ Strict
 Import flixel
 Import src.interactable.script
 Import src.game
+Import src.player
 
 
 Class ScriptGameOver Extends Script Implements ActionListener
@@ -21,7 +22,11 @@ Class ScriptGameOver Extends Script Implements ActionListener
 	End Method
 	
 	Method OnAction:Void(action:Action)
-		'note: TODO restart
+		Player.Items.Clear()
+		Game.Chapter.state.Reset()
+		
+		Game.Chapter = New Chapter1(Game.Chapter.state)
+		Game.Chapter.Create()
 	End Method
 
 End Class

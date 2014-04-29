@@ -7,6 +7,8 @@ Class Playground Extends BaseScene
 
 	Field triggerGoToOutdoors:GoToScene
 	
+	Field bgSound:FlxSound
+	
 	Method New(state:PlayState)
 		Super.New(state)
 	End Method
@@ -21,10 +23,17 @@ Class Playground Extends BaseScene
 	End Method
 	
 	Method OnActivate:Void()
+		bgSound = FlxG.Play(Assets.SOUND_SWINGS,, True)
+	
 		state.AddInteractable(triggerGoToOutdoors)
 		background.Image = Assets.SCENE_PLAYGROUND
 		
 		Super.OnActivate()
+	End Method
+	
+	Method OnClose:Bool(system:Bool)
+		bgSound.Stop()
+		Return Super.OnClose(system)
 	End Method
 	
 End Class

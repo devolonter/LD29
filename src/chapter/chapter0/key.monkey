@@ -14,7 +14,16 @@ Class Key Extends TakeableSprite
 		Super.New(x, y, ChapterAssets.SPRITE_KEY)
 		
 		name = "key"
-		Description = "Some key"
+		Description = "A rusty key. It almost crumbles in my hands"
+	End Method
+	
+	Method OnInteract:Void()
+		If (Not FlxG.Music Or Not FlxG.Music.active) Then
+			Game.Creak.FadeOut(2)
+			FlxG.PlayMusic(Assets.MUSIC_WHISTLE)
+		End If
+		
+		Super.OnInteract()
 	End Method
 
 End Class
