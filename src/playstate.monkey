@@ -9,6 +9,7 @@ Import scene.outdoors
 Import scene.playground
 
 Import interactable.gotoscene
+Import interactable.action.leave
 
 Import chapter.chapter0
 Import chapter.chapter1
@@ -49,6 +50,12 @@ Class PlayState Extends FlxState
 		Super.Update()
 		
 		If (Game.Dialog.visible Or _blocked) Then
+			If ( Not _blocked) Then
+				If (FlxG.Mouse.JustPressed() And Not Game.Dialog.actions[1].visible) Then
+					Game.Dialog.Pop()
+				End If
+			End If
+			
 			Return
 		End If
 		

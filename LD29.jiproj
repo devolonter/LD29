@@ -261,5 +261,5 @@
       </CursorPos>
     </Document>
   </Files>
-  <CompilerConfig Configuration="release" BuildMode="run" Target="Flash_Game" />
+  <CompilerConfig Configuration="debug" BuildMode="run" Target="Html5_Game" />
 </JiProj>
