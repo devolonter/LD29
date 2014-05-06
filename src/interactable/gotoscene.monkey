@@ -16,7 +16,7 @@ Class GoToScene Extends FlxObject Implements Interactable
 		Self.parent = parent
 		Self.scene = scene
 		
-		width = 100
+		width = 70
 		height = (FlxG.Height - Game.SCREEN_PADDING * 2) / 2
 		_enabled = True
 	End Method
