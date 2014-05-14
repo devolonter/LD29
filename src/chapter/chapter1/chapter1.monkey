@@ -29,7 +29,7 @@ Class Chapter1 Extends Chapter
 		Super.Create()
 		
 		Chapter1.Boy = New Boy(100, Game.SCREEN_PADDING + 135, New Train(220, Game.SCREEN_PADDING + 250))
-		Chapter1.Girl = New Girl(390, Game.SCREEN_PADDING + 130)
+		Chapter1.Girl = New Girl(400, Game.SCREEN_PADDING + 130)
 		
 		state.playground.AddItem(Chapter1.Boy)
 		state.playground.AddItem(Chapter1.Girl)
