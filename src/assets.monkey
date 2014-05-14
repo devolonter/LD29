@@ -8,6 +8,7 @@ Class Assets
 	
 	Const SCENE_TITLE:String = "scene_title"
 	Const SCENE_PARK:String = "scene_park"
+	Const SCENE_PARK_DARK:String = "scene_park_dark"
 	Const SCENE_OUTDOORS:String = "scene_outdoors"
 	Const SCENE_PLAYGROUND:String = "scene_playground"
 
@@ -38,6 +39,7 @@ Class Assets
 		
 		FlxAssetsManager.AddImage(SCENE_TITLE, "scene/title.png")
 		FlxAssetsManager.AddImage(SCENE_PARK, "scene/park.png")
+		FlxAssetsManager.AddImage(SCENE_PARK_DARK, "scene/park_dark.png")
 		FlxAssetsManager.AddImage(SCENE_OUTDOORS, "scene/outdoors.png")
 		FlxAssetsManager.AddImage(SCENE_PLAYGROUND, "scene/playground.png")
 		FlxAssetsManager.AddImage(SPRITE_STAR, "scene/detail/star.png")
@@ -59,6 +61,7 @@ Class Assets
 		
 		preloader.LoadGraphic(SCENE_TITLE)
 		preloader.LoadGraphic(SCENE_PARK)
+		preloader.LoadGraphic(SCENE_PARK_DARK)
 		preloader.LoadGraphic(SCENE_OUTDOORS)
 		preloader.LoadGraphic(SCENE_PLAYGROUND)
 		preloader.LoadGraphic(SPRITE_STAR)

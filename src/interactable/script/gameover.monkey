@@ -14,6 +14,7 @@ Class ScriptGameOver Extends Script Implements ActionListener
 	
 	Method Run:Void()
 		Game.Chapter.state.ClearInteractable()
+		scene.background.Image = Assets.SCENE_PARK_DARK
 		Game.Dialog.Push("Thanks for playing!",[New Action("Start again", Self)])
 	End Method
 	

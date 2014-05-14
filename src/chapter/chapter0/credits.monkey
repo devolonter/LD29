@@ -10,6 +10,8 @@ Import chapterassets
 Public
 
 Class CreditsButton Extends Button Implements FlxButtonOverListener, FlxButtonOutListener, FlxButtonClickListener
+
+	Global Instance:CreditsButton
 	
 	Method New(x:Float, y:Float)
 		Super.New(x, y, "credits")
@@ -23,6 +25,8 @@ Class CreditsButton Extends Button Implements FlxButtonOverListener, FlxButtonOu
 		onOver = Self
 		onOut = Self
 		onUp = Self
+		
+		Instance = Self
 	End Method
 	
 	Method Update:Void()
@@ -37,8 +41,7 @@ Class CreditsButton Extends Button Implements FlxButtonOverListener, FlxButtonOu
 				label.y += 1
 			
 			Default
-				label.Color = $FFada495
-				
+				label.Color = $FFada495				
 
 		End Select
 	End Method
@@ -82,7 +85,7 @@ Class CreditsWindow Extends FlxGroup
 		Add(label)
 		Add(credits)
 		
-		Game.Chapter.state.Add(Self)
+		Game.Chapter.state.park.AddItem(Self)
 	End Method
 	
 	Method Update:Void()
