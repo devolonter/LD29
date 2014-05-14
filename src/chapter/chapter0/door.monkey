@@ -6,6 +6,7 @@ Import src.interactable.actionablesprite
 Import src.interactable.action.leave
 Import src.interactable.gotoscene
 
+Import src.chapter.chapter0.credits
 Import src.chapter.chapter1
 
 Private
@@ -44,6 +45,7 @@ Class Door Extends ActionableSprite Implements ActionListener
 	Method OnAction:Void(action:Action)
 		FlxG.Play(ChapterAssets.SOUND_DOOR)
 		Kill()
+		
 		Game.Chapter.state.AddInteractable(New StartGame(Game.Chapter.state, Game.Chapter.state.outdoors))
 	End Method
 
@@ -61,6 +63,7 @@ Class StartGame Extends GoToScene
 	Method OnInteract:Void()		
 		Game.Chapter = New Chapter1(parent)
 		Game.Chapter.Create()
+		CreditsButton.Instance.Kill()
 		
 		Super.OnInteract()
 	End Method
