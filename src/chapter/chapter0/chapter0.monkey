@@ -8,6 +8,7 @@ Private
 Import chapterassets
 Import key
 Import door
+Import credits
 
 Public
 
@@ -27,6 +28,7 @@ Class Chapter0 Extends Chapter
 		
 		state.park.AddItem(New Key(490, 353))
 		state.park.AddItem(New Door(560, 181))
+		state.park.AddItem(New CreditsButton(315, 65 + Game.SCREEN_PADDING))
 		
 		state.SetSubState(state.park)
 	End Method
