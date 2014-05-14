@@ -1,8 +1,15 @@
 Strict
 
 Import src.button
+Import src.game
 
-Class CreditsButton Extends Button Implements FlxButtonOverListener, FlxButtonOutListener
+Private
+
+Import chapterassets
+
+Public
+
+Class CreditsButton Extends Button Implements FlxButtonOverListener, FlxButtonOutListener, FlxButtonClickListener
 	
 	Method New(x:Float, y:Float)
 		Super.New(x, y, "credits")
@@ -15,6 +22,7 @@ Class CreditsButton Extends Button Implements FlxButtonOverListener, FlxButtonOu
 		
 		onOver = Self
 		onOut = Self
+		onUp = Self
 	End Method
 	
 	Method Update:Void()
@@ -40,7 +48,65 @@ Class CreditsButton Extends Button Implements FlxButtonOverListener, FlxButtonOu
 	End Method
 	
 	Method OnButtonOut:Void(button:FlxButton)
-		FlxG.Mouse.Show(Assets.CURSOR_DEFAULT)		
+		FlxG.Mouse.Show(Assets.CURSOR_DEFAULT)
+	End Method
+	
+	Method OnButtonClick:Void(button:FlxButton)
+		If ( Not _Window) _Window = New CreditsWindow()
+		_Window.Show()
 	End Method
 
 End Class
+
+Class CreditsWindow Extends FlxGroup
+	
+	Method New()
+		Local bg:FlxSprite = New FlxSprite()
+		
+		bg.width = 350
+		bg.height = 300
+		bg.Alpha = 0.75
+		bg.Color = 0
+		
+		bg.Reset( (FlxG.Width - bg.width) * 0.5, (FlxG.Height - bg.height) * 0.5)
+		bg.SetRenderer(New RectSpriteRenderer())
+		
+		Local label:FlxText = New FlxText(bg.x + 5, bg.y + 5, bg.width - 10, "CREDITS")
+		label.SetFormat(Assets.FONT_DIALOG, 18, $FFada495, FlxText.ALIGN_CENTER)
+		
+		Local credits:FlxSprite = New FlxSprite(0, 0, ChapterAssets.SPRITE_CREDITS)
+		credits.Reset( (FlxG.Width - credits.width) * 0.5, label.y + label.height + 25)
+		credits.angularVelocity = 5
+		
+		Add(bg)
+		Add(label)
+		Add(credits)
+		
+		Game.Chapter.state.Add(Self)
+	End Method
+	
+	Method Update:Void()
+		Super.Update()
+	
+		If (FlxG.Mouse.JustPressed()) Then
+			Hide()
+		End If
+	End Method
+	
+	Method Show:Void()
+		visible = True
+		active = True
+		Game.Chapter.state.Block()
+	End Method
+	
+	Method Hide:Void()
+		visible = False
+		active = False
+		Game.Chapter.state.Unblock()
+	End Method
+
+End Class
+
+Private
+
+Global _Window:CreditsWindow
