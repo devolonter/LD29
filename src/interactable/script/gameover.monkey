@@ -24,6 +24,8 @@ Class ScriptGameOver Extends Script Implements ActionListener
 	
 	Method OnAction:Void(action:Action)
 		Player.Items.Clear()
+		Player.Ending = 0
+		
 		Game.Chapter.state.Reset()
 		
 		Game.Chapter = New Chapter1(Game.Chapter.state)

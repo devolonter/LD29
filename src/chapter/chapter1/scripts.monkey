@@ -77,6 +77,8 @@ Class ScriptSamaraGirl Extends Script Implements FlxCameraShakeListener
 	End Method
 	
 	Method Run:Void()
+		Player.Ending = 1
+	
 		FlxG.Music.Stop()
 		
 		Game.Creak.Kill()
@@ -198,6 +200,7 @@ Class ScriptSamaraFall Extends Script Implements FlxCameraShakeListener
 	End Method
 	
 	Method Run:Void()
+		Player.Ending = 2
 		FlxG.Music.Stop()
 	
 		Game.Creak.Kill()
