@@ -52,6 +52,7 @@ Class PlayState Extends FlxState
 		If (Game.Dialog.visible Or _blocked) Then
 			If ( Not _blocked) Then
 				If (FlxG.Mouse.JustPressed() And Not Game.Dialog.actions[1].visible) Then
+					Game.Dialog.actions[0].onUp.OnButtonClick(Game.Dialog.actions[0])
 					Game.Dialog.Pop()
 				End If
 			End If
