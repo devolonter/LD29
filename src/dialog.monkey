@@ -13,6 +13,8 @@ Class Dialog Extends FlxGroup
 	
 	Field actions:Button[2]
 	
+	Field fullScreen:Bool
+	
 	Method New()
 		background = New FlxSprite(20, FlxG.Height - Game.SCREEN_PADDING - 50)
 		
@@ -71,6 +73,21 @@ Class Dialog Extends FlxGroup
 	
 	Method Pop:Void()
 		visible = False
+	End Method
+	
+	Method ToggleFullscreen:Void()
+		If (fullScreen) Then
+			background.height = 50
+			background.y = FlxG.Height - Game.SCREEN_PADDING - background.height
+		Else
+			background.height = FlxG.Height - Game.SCREEN_PADDING * 2
+			background.y = Game.SCREEN_PADDING
+		End If
+		
+		background.frameHeight = background.height
+		phrase.y = background.y + 3
+			
+		fullScreen = Not fullScreen
 	End Method
 
 End Class
