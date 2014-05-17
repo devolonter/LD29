@@ -69,8 +69,12 @@ Class Girl Extends ActionableSprite Implements ActionListener
 				If ( Not Chapter1.Boy.whistle) Then
 					Chapter1.Boy.train.Reset(480, 195 + Game.SCREEN_PADDING)
 					Game.Chapter.state.RemoveInteractable(Self, True)
-					
-					New ScriptBoyInYard(Game.Chapter.state.outdoors)
+				
+					If ( Not Player.Items.Contains("train.broken")) Then
+						New ScriptBoyInYard(Game.Chapter.state.outdoors)
+					Else
+						New ScriptBoyShadow(Game.Chapter.state.outdoors)
+					End If
 				Else
 					train = New Train(480, 195 + Game.SCREEN_PADDING)
 					Game.Chapter.state.playground.AddItem(train)

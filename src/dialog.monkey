@@ -11,7 +11,7 @@ Class Dialog Extends FlxGroup
 
 	Field phrase:FlxText
 	
-	Field actions:Button[2]
+	Field actions:Button[3]
 	
 	Field fullScreen:Bool
 	

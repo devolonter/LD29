@@ -45,7 +45,7 @@ Class Boy Extends ActionableSprite Implements ActionListener, FlxTweenListener
 		
 		actions.Set("default", New SpriteAction(who + ": " + hasTrain,[Action(New LeaveAction())]))
 		actions.Set("take.train", New SpriteAction(who + ": " + hasTrain,[Action(New LeaveAction()), takeTrain]))
-		actions.Set("exchange.train", New SpriteAction(who + ": " + hasTrain,[Action(New LeaveAction()), exchangeTrain]))
+		actions.Set("exchange.train", New SpriteAction(who + ": " + hasTrain,[Action(New LeaveAction()), exchangeTrain, takeTrain]))
 		
 		actions.Set("question.whistle", New SpriteAction(who + ": " + questionWhistle,[Action(New LeaveAction())]))
 		actions.Set("give.whistle", New SpriteAction(who + ": " + questionWhistle,[Action(New LeaveAction()), giveWhistle]))

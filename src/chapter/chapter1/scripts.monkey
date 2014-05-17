@@ -35,6 +35,37 @@ Class ScriptBoyInYard Extends Script
 
 End Class
 
+Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
+	
+	Method New(scene:BaseScene)
+		Super.New(scene)
+	End Method
+	
+	Method Run:Void()
+		Player.Ending = 2
+	
+		FlxG.Music.Stop()
+		
+		Game.Creak.Kill()
+		Game.Creak = FlxG.Play(Assets.SOUND_CREAK)
+	
+		Chapter1.Boy.Reset(120, 172 + Game.SCREEN_PADDING)
+		Chapter1.Boy.LoadGraphic(ChapterAssets.SPRITE_BOY_YARD)
+		
+		Game.Chapter.state.playground.RemoveItem(Chapter1.Boy)
+		Game.Chapter.state.outdoors.AddItem(Chapter1.Boy)
+		
+		Game.Chapter.state.ClearInteractable()
+		
+		FlxG.Shake(0.005, 5, Self)
+	End Method
+	
+	Method OnCameraShakeComplete:Void(camera:FlxCamera)
+		scene.GameOver()
+	End Method
+
+End Class
+
 Class ScriptGirlDisapear Extends Script
 	
 	Method New(scene:BaseScene)
