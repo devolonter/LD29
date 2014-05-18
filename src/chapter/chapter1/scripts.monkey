@@ -43,6 +43,10 @@ Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
 	
 	Field fade:Bool
 	
+	Field bloodSpot:FlxSprite[3]
+	
+	Field bloodTimer:Float
+	
 	Method New(scene:BaseScene)
 		Super.New(scene)
 	End Method
@@ -67,6 +71,29 @@ Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
 		scene.AddItem(shadow)
 		scene.AddItem(Chapter1.Boy)
 		
+		bloodSpot[0] = New FlxSprite(30, Game.SCREEN_PADDING + 20, ChapterAssets.SPRITE_BLOOD_SPOT)
+		bloodSpot[1] = New FlxSprite(250, Game.SCREEN_PADDING + 175, ChapterAssets.SPRITE_BLOOD_SPOT)
+		bloodSpot[2] = New FlxSprite(450, Game.SCREEN_PADDING + 70, ChapterAssets.SPRITE_BLOOD_SPOT)
+		
+		Local scale:Float = FlxG.Random(0.3, 0.5)
+		bloodSpot[0].scale.Make(scale, scale)
+		bloodSpot[0].angle = FlxG.Random(0, 359)
+		bloodSpot[0].visible = False
+		
+		scale = FlxG.Random(0.3, 0.5)
+		bloodSpot[1].scale.Make(scale, scale)
+		bloodSpot[1].angle = FlxG.Random(0, 359)
+		bloodSpot[1].visible = False
+		
+		scale = FlxG.Random(0.3, 0.5)
+		bloodSpot[2].scale.Make(scale, scale)
+		bloodSpot[2].angle = FlxG.Random(0, 359)
+		bloodSpot[2].visible = False
+		
+		scene.AddItem(bloodSpot[0])
+		scene.AddItem(bloodSpot[1])
+		scene.AddItem(bloodSpot[2])
+		
 		Game.Chapter.state.ClearInteractable()
 		
 		FlxG.Shake(0.005, 5, Self)
@@ -76,9 +103,25 @@ Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
 		scale += 2.0 / (5.0 / FlxG.Elapsed)		
 		shadow.scale.Make(scale, scale)
 		
-		If (scale > 1.5 And Not fade) Then
+		If (scale > 1.3 And Not fade) Then
 			FlxG.Fade(, 2)
 			fade = True
+			bloodTimer = FlxG.Random(0.2, 0.4)
+		End If
+		
+		If (fade) Then
+			bloodTimer -= FlxG.Elapsed
+			
+			If (bloodTimer <= 0) Then
+				bloodTimer = FlxG.Random(0.2, 0.4)
+			
+				For Local i:Int = 0 Until bloodSpot.Length()
+					If ( Not bloodSpot[i].visible) Then
+						bloodSpot[i].visible = True
+						Exit
+					End If
+				Next
+			End If
 		End If
 	End Method
 	
