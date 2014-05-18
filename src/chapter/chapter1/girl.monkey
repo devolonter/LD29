@@ -84,7 +84,7 @@ Class Girl Extends ActionableSprite Implements ActionListener
 					
 					Game.Chapter.state.RemoveInteractable(Self, True)
 					
-					Local s:FlxSound = FlxG.Play(ChapterAssets.SOUND_WINDOW)
+					Local s:FlxSound = FlxG.Play(ChapterAssets.SOUND_WINDOW, 0.5)
 					s._SetTransform(s.Volume, 1)
 					
 					New ScriptSamaraFall(Game.Chapter.state.outdoors)
