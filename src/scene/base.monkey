@@ -82,6 +82,7 @@ Class BaseScene Extends FlxSubState
 		End If
 	
 		state.ClearInteractable()
+		FlxTimer.Manager().Clear()
 		Return True
 	End Method
 	
