@@ -169,6 +169,8 @@ Class ScriptDeadGirl Extends Script Implements FlxCameraShakeListener
 
 	Field body:FlxSprite
 	
+	Field blood:FlxSprite
+	
 	Method New(scene:BaseScene)
 		Super.New(scene)
 	End Method
@@ -180,8 +182,13 @@ Class ScriptDeadGirl Extends Script Implements FlxCameraShakeListener
 		Game.Creak = FlxG.Play(Assets.SOUND_CREAK)
 	
 		body = New FlxSprite(396, 240 + Game.SCREEN_PADDING, ChapterAssets.SPRITE_DEAD_BODY)
+		
+		blood = New FlxSprite(0, 0, ChapterAssets.SPRITE_BLOOD_GROUND)
+		blood.Reset(body.x + (body.width - blood.width) * 0.5, body.y + (body.height - blood.height) * 0.5)
 	
+		scene.AddItem(blood)
 		scene.AddItem(body)
+		
 		Game.Chapter.state.ClearInteractable()
 		
 		FlxG.Shake(0.005, 3, Self)
@@ -196,7 +203,9 @@ Class ScriptDeadGirl Extends Script Implements FlxCameraShakeListener
 	
 	Method OnCameraShakeComplete:Void(camera:FlxCamera)
 		body.Kill()
+		blood.Kill()
 		scene.RemoveItem(body)
+		scene.RemoveItem(blood)
 		scene.Reset()
 	End Method
 
@@ -226,6 +235,10 @@ Class ScriptSamaraFall Extends Script Implements FlxCameraShakeListener
 
 	Field shacked:Bool
 	
+	Field blood:FlxSprite
+	
+	Field scale:Float
+	
 	Method New(scene:BaseScene)
 		Super.New(scene)
 	End Method
@@ -236,6 +249,11 @@ Class ScriptSamaraFall Extends Script Implements FlxCameraShakeListener
 	
 		Game.Creak.Kill()
 		Game.Creak = FlxG.Play(Assets.SOUND_CREAK)
+		
+		blood = New FlxSprite(359, 321, ChapterAssets.SPRITE_BLOOD_GROUND)
+		blood.visible = False
+		blood.scale.Make(0, 0)
+		scene.AddItem(blood)
 	
 		Chapter1.Girl.LoadGraphic(ChapterAssets.SPRITE_SAMARA_FALL, True, True, 180, 106)
 		Chapter1.Girl.AddAnimation("fall", 0, 8, 15, True)
@@ -251,18 +269,28 @@ Class ScriptSamaraFall Extends Script Implements FlxCameraShakeListener
 	End Method
 	
 	Method Update:Void()
-		If (Chapter1.Girl.velocity.y > 0 And Chapter1.Girl.y > Game.SCREEN_PADDING + 220) Then
+		If ( Not shacked And Chapter1.Girl.velocity.y > 0 And Chapter1.Girl.y > Game.SCREEN_PADDING + 220) Then
 			FlxG.Shake(0.005, 5, Self)
 			Chapter1.Girl.velocity.y = 0
 			Chapter1.Girl.Frame = 8
 			
 			Game.Chapter.state.outdoors.AddItem(New FlxSprite(268, Game.SCREEN_PADDING + 12, ChapterAssets.SPRITE_BOY_WINDOW))
 			FlxG.Play(ChapterAssets.SOUND_WHISTLE)
+			
+			shacked = True
+			blood.visible = True
+		End If
+		
+		If (shacked) Then
+			scale += 1.0 / (5 / FlxG.Elapsed)
+			blood.scale.Make(Min(scale, 1.0), Min(scale, 1.0))
 		End If
 	End Method
 	
 	Method OnCameraShakeComplete:Void(camera:FlxCamera)
 		Chapter1.Girl.Kill()
+		blood.Kill()
+		scene.RemoveItem(blood)
 		scene.GameOver()
 	End Method
 

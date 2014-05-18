@@ -17,6 +17,7 @@ Class ChapterAssets
 	Const SPRITE_WHISTLE_IDLE:String = "chapter1_whistle_idle"
 	Const SPRITE_WHISTLE_ON:String = "chapter1_whistle_on"
 	Const SPRITE_DEAD_BODY:String = "chapter1_dead_body"
+	Const SPRITE_BLOOD_GROUND:String = "chapter1_blood_ground"
 	
 	Const SOUND_BOY:String = "chapter1_boy"
 	Const SOUND_GIRL:String = "chapter1_girl"
@@ -42,6 +43,7 @@ Class ChapterAssets
 		FlxAssetsManager.AddImage(SPRITE_WHISTLE_IDLE, "chapter/1/whistle_idle.png")
 		FlxAssetsManager.AddImage(SPRITE_WHISTLE_ON, "chapter/1/whistle_on.png")
 		FlxAssetsManager.AddImage(SPRITE_DEAD_BODY, "chapter/1/dead_body.png")
+		FlxAssetsManager.AddImage(SPRITE_BLOOD_GROUND, "chapter/1/blood_ground.png")
 		
 		FlxAssetsManager.AddSound(SOUND_BOY, "chapter/1/boy.mp3")
 		FlxAssetsManager.AddSound(SOUND_GIRL, "chapter/1/girl.mp3")
@@ -68,6 +70,7 @@ Class ChapterAssets
 		preloader.LoadGraphic(SPRITE_WHISTLE_IDLE)
 		preloader.LoadGraphic(SPRITE_WHISTLE_ON)
 		preloader.LoadGraphic(SPRITE_DEAD_BODY)
+		preloader.LoadGraphic(SPRITE_BLOOD_GROUND)
 		
 		preloader.Destroy()
 	End Function
