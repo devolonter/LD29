@@ -263,7 +263,7 @@ Class ScriptDeadGirl Extends Script Implements FlxCameraShakeListener
 		
 		FlxG.Shake(0.005, 3, Self)
 		
-		FlxG.Play(ChapterAssets.SOUND_GIRL_FALL)
+		FlxG.Play(ChapterAssets.SOUND_SURPRISE)
 	End Method
 	
 	Method Stop:Void()
