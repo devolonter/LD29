@@ -38,6 +38,8 @@ Class Door Extends ActionableSprite Implements ActionListener
 	
 		If (Player.Items.Contains("key")) Then
 			SetAction(actions.Get("open"))
+		Else
+			FlxG.Play(ChapterAssets.SOUND_DOOR_CLOSED)
 		End If
 	
 		Super.OnInteract()

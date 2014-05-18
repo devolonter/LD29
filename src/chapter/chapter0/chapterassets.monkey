@@ -9,6 +9,7 @@ Class ChapterAssets
 	Const SPRITE_CREDITS:String = "chapter0_credits"
 	
 	Const SOUND_DOOR:String = "chapter0_door"
+	Const SOUND_DOOR_CLOSED:String = "chapter0_door_closed"
 	
 	Function Init:Void()
 		FlxAssetsManager.AddImage(SPRITE_KEY, "chapter/0/key.png")
@@ -16,13 +17,13 @@ Class ChapterAssets
 		FlxAssetsManager.AddImage(SPRITE_CREDITS, "chapter/0/credits.png")
 		
 		FlxAssetsManager.AddSound(SOUND_DOOR, "chapter/0/door.mp3")
+		FlxAssetsManager.AddSound(SOUND_DOOR_CLOSED, "chapter/0/door_closed.mp3")
 	End Function
 	
 	Function Load:Void()
 		Local preloader:FlxSprite = New FlxSprite()
 		
 		preloader.LoadGraphic(SPRITE_KEY)
-		preloader.LoadGraphic(SPRITE_DOOR)
 		preloader.LoadGraphic(SPRITE_CREDITS)
 		
 		preloader.Destroy()
