@@ -44,8 +44,6 @@ Class Park Extends BaseScene Implements FlxTimerListener
 	Method OnTimerTick:Void(timer:FlxTimer)
 		If (Player.Ending = 0) Then
 			FlxG.Play(Assets.SOUND_OWL)
-		Else
-			FlxG.Play(Assets.SOUND_WOLF)
 		End If
 	End Method
 	

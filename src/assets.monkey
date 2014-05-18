@@ -28,6 +28,7 @@ Class Assets
 	Const SOUND_STEPS:String = "steps"
 	Const SOUND_TAKE:String = "take"
 	Const SOUND_WOLF:String = "wolf"
+	Const SOUND_TUNE:String = "tune"
 	
 	Function Init:Void()
 		FlxAssetsManager.AddCursor(CURSOR_DEFAULT, "ui/mouse/default.png")
@@ -48,6 +49,7 @@ Class Assets
 		FlxAssetsManager.AddImage(SPRITE_STAR, "scene/detail/star.png")
 		
 		FlxAssetsManager.AddMusic(MUSIC_WHISTLE, "music/whistle.mp3")
+		FlxAssetsManager.AddSound(SOUND_TUNE, "music/tune.mp3")
 		
 		FlxAssetsManager.AddSound(SOUND_WIND, "fx/wind.mp3")
 		FlxAssetsManager.AddSound(SOUND_SWINGS, "fx/swings.mp3")

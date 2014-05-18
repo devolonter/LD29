@@ -105,6 +105,7 @@ Class BaseScene Extends FlxSubState
 	Method GameOver:Void()
 		Game.Creak.FadeOut(2)
 		FlxG.Music.Play()
+		FlxG.Play(Assets.SOUND_TUNE)
 		
 		gameOverTimer = 3
 		
