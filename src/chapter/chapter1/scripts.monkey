@@ -116,6 +116,10 @@ Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
 			
 			If (bloodTimer <= 0) Then
 				bloodTimer = FlxG.Random(0.2, 0.4)
+				
+				If ( Not bloodSpot[0].visible) Then
+					FlxG.Play(ChapterAssets.SOUND_SCREAM)
+				End If
 			
 				For Local i:Int = 0 Until bloodSpot.Length()
 					If ( Not bloodSpot[i].visible) Then
