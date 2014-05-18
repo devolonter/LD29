@@ -9,6 +9,7 @@ Import boy
 Import girl
 Import train
 Import scripts
+Import blood
 
 Public
 

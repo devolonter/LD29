@@ -8,6 +8,7 @@ Import chapterassets
 Import chapter1
 Import whistle
 Import train
+Import blood
 
 Public
 
@@ -164,10 +165,10 @@ Class ScriptGirlDisapear Extends Script
 End Class
 
 Class ScriptSamaraGirl Extends Script Implements FlxCameraShakeListener
-
-	Field shacked:Bool
 	
 	Field scream:FlxSound
+	
+	Field blood:Blood
 	
 	Method New(scene:BaseScene)
 		Super.New(scene)
@@ -190,16 +191,18 @@ Class ScriptSamaraGirl Extends Script Implements FlxCameraShakeListener
 		Chapter1.Girl.Play("walk")
 		Chapter1.Girl.velocity.x = 100
 		
-		Game.Chapter.state.outdoors.AddItem(Chapter1.Girl)
+		scene.AddItem(Chapter1.Girl)
+		
+		blood = New Blood(0, Game.SCREEN_PADDING)
+		scene.AddItem(blood)
 		
 		Game.Chapter.state.ClearInteractable()
+		
+		FlxG.Shake(0.005, 4, Self)
 	End Method
 	
 	Method Update:Void()
-		If ( Not shacked And Chapter1.Girl.x > 300) Then
-			FlxG.Shake(0.005, 5, Self)
-			shacked = True
-		End If
+		blood.height += 1
 	
 		If (Chapter1.Girl.x > 550 And Chapter1.Girl.velocity.x > 0) Then
 			Chapter1.Girl.Facing = FlxObject.LEFT

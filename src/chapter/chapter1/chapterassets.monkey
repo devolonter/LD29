@@ -20,6 +20,7 @@ Class ChapterAssets
 	Const SPRITE_DEAD_BODY:String = "chapter1_dead_body"
 	Const SPRITE_BLOOD_GROUND:String = "chapter1_blood_ground"
 	Const SPRITE_BLOOD_SPOT:String = "chapter1_blood_spot"
+	Const SPRITE_BLOOD_SCREEN:String = "chapter1_blood_screen"
 	
 	Const SOUND_BOY:String = "chapter1_boy"
 	Const SOUND_GIRL:String = "chapter1_girl"
@@ -48,6 +49,7 @@ Class ChapterAssets
 		FlxAssetsManager.AddImage(SPRITE_DEAD_BODY, "chapter/1/dead_body.png")
 		FlxAssetsManager.AddImage(SPRITE_BLOOD_GROUND, "chapter/1/blood_ground.png")
 		FlxAssetsManager.AddImage(SPRITE_BLOOD_SPOT, "chapter/1/blood_spot.png")
+		FlxAssetsManager.AddImage(SPRITE_BLOOD_SCREEN, "chapter/1/blood_screen.png")
 		
 		FlxAssetsManager.AddSound(SOUND_BOY, "chapter/1/boy.mp3")
 		FlxAssetsManager.AddSound(SOUND_GIRL, "chapter/1/girl.mp3")
@@ -77,6 +79,7 @@ Class ChapterAssets
 		preloader.LoadGraphic(SPRITE_DEAD_BODY)
 		preloader.LoadGraphic(SPRITE_BLOOD_GROUND)
 		preloader.LoadGraphic(SPRITE_BLOOD_SPOT)
+		preloader.LoadGraphic(SPRITE_BLOOD_SCREEN)
 		
 		preloader.Destroy()
 	End Function
