@@ -7,6 +7,7 @@ Class ChapterAssets
 	Const SPRITE_BOY:String = "chapter1_boy"
 	Const SPRITE_BOY_YARD:String = "chapter1_boy_yard"
 	Const SPRITE_BOY_WINDOW:String = "chapter1_boy_window"
+	Const SPRITE_BOY_SHADOW:String = "chapter1_boy_shadow"
 	Const SPRITE_GIRL:String = "chapter1_girl"
 	Const SPRITE_SAMARA_WALK:String = "chapter1_samara_walk"
 	Const SPRITE_SAMARA_FALL:String = "chapter1_samara_fall"
@@ -33,6 +34,7 @@ Class ChapterAssets
 		FlxAssetsManager.AddImage(SPRITE_BOY, "chapter/1/boy.png")
 		FlxAssetsManager.AddImage(SPRITE_BOY_YARD, "chapter/1/boy_yard.png")
 		FlxAssetsManager.AddImage(SPRITE_BOY_WINDOW, "chapter/1/boy_in_window.png")
+		FlxAssetsManager.AddImage(SPRITE_BOY_SHADOW, "chapter/1/boy_shadow.png")
 		FlxAssetsManager.AddImage(SPRITE_GIRL, "chapter/1/girl.png")
 		FlxAssetsManager.AddImage(SPRITE_SAMARA_WALK, "chapter/1/samara_walk.png")
 		FlxAssetsManager.AddImage(SPRITE_SAMARA_FALL, "chapter/1/samara_fall.png")
@@ -62,6 +64,7 @@ Class ChapterAssets
 		preloader.LoadGraphic(SPRITE_BOY)
 		preloader.LoadGraphic(SPRITE_BOY_YARD)
 		preloader.LoadGraphic(SPRITE_BOY_WINDOW)
+		preloader.LoadGraphic(SPRITE_BOY_SHADOW)
 		preloader.LoadGraphic(SPRITE_GIRL)
 		preloader.LoadGraphic(SPRITE_TRAIN)
 		preloader.LoadGraphic(SPRITE_TRAIN_BROKEN)

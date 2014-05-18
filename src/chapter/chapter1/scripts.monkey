@@ -36,6 +36,12 @@ Class ScriptBoyInYard Extends Script
 End Class
 
 Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
+
+	Field shadow:FlxSprite
+	
+	Field scale:Float
+	
+	Field fade:Bool
 	
 	Method New(scene:BaseScene)
 		Super.New(scene)
@@ -52,15 +58,32 @@ Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
 		Chapter1.Boy.Reset(120, 172 + Game.SCREEN_PADDING)
 		Chapter1.Boy.LoadGraphic(ChapterAssets.SPRITE_BOY_YARD)
 		
+		shadow = New FlxSprite(Chapter1.Boy.x + 10, Chapter1.Boy.y - 20, ChapterAssets.SPRITE_BOY_SHADOW)
+		shadow.origin.y = shadow.height
+		shadow.scale.Make(0, 0)
+		
 		Game.Chapter.state.playground.RemoveItem(Chapter1.Boy)
-		Game.Chapter.state.outdoors.AddItem(Chapter1.Boy)
+		
+		scene.AddItem(shadow)
+		scene.AddItem(Chapter1.Boy)
 		
 		Game.Chapter.state.ClearInteractable()
 		
 		FlxG.Shake(0.005, 5, Self)
 	End Method
 	
+	Method Update:Void()
+		scale += 2.0 / (5.0 / FlxG.Elapsed)		
+		shadow.scale.Make(scale, scale)
+		
+		If (scale > 1.5 And Not fade) Then
+			FlxG.Fade(, 2)
+			fade = True
+		End If
+	End Method
+	
 	Method OnCameraShakeComplete:Void(camera:FlxCamera)
+		FlxG.Camera.StopFX()
 		scene.GameOver()
 	End Method
 
