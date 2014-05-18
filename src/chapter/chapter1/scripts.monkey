@@ -98,6 +98,7 @@ Class ScriptBoyShadow Extends Script Implements FlxCameraShakeListener
 		Game.Chapter.state.ClearInteractable()
 		
 		FlxG.Shake(0.005, 5, Self)
+		FlxG.Play(ChapterAssets.SOUND_ROAR)
 	End Method
 	
 	Method Update:Void()
