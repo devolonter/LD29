@@ -148,7 +148,7 @@ Class Boy Extends ActionableSprite Implements ActionListener, FlxTweenListener
 				Game.Chapter.state.Unblock()
 				
 				Local s:FlxSound = FlxG.Play(ChapterAssets.SOUND_WHISTLE)
-				s._SetTransform(s.Volume, -1)
+				s._SetTransform(s.Volume, 1)
 				
 				New ScriptGirlDisapear(Game.Chapter.state.playground)
 				

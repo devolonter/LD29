@@ -282,5 +282,5 @@
       </CursorPos>
     </Document>
   </Files>
-  <CompilerConfig Configuration="debug" BuildMode="run" Target="Flash_Game" />
+  <CompilerConfig Configuration="release" BuildMode="run" Target="Flash_Game" />
 </JiProj>

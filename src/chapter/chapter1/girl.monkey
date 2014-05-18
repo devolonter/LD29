@@ -74,7 +74,7 @@ Class Girl Extends ActionableSprite Implements ActionListener
 						New ScriptBoyInYard(Game.Chapter.state.outdoors)
 					Else
 						Local s:FlxSound = FlxG.Play(ChapterAssets.SOUND_BOY_CRY)
-						s._SetTransform(s.Volume, 1)
+						s._SetTransform(s.Volume, -1)
 										
 						New ScriptBoyShadow(Game.Chapter.state.outdoors)
 					End If
@@ -85,7 +85,7 @@ Class Girl Extends ActionableSprite Implements ActionListener
 					Game.Chapter.state.RemoveInteractable(Self, True)
 					
 					Local s:FlxSound = FlxG.Play(ChapterAssets.SOUND_WINDOW, 0.5)
-					s._SetTransform(s.Volume, 1)
+					s._SetTransform(s.Volume, -1)
 					
 					New ScriptSamaraFall(Game.Chapter.state.outdoors)
 				End If
@@ -111,7 +111,7 @@ Class TrainQuestAction Extends LeaveAction Implements ActionListener
 			Player.Items.Insert("quest.train")
 			
 			Local s:FlxSound = FlxG.Play(ChapterAssets.SOUND_TRAIN_FALL)
-			s._SetTransform(s.Volume, 1)
+			s._SetTransform(s.Volume, -1)
 			
 			New ScriptBrokenTrain(Game.Chapter.state.outdoors)
 		End If
