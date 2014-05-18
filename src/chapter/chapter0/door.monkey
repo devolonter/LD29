@@ -33,6 +33,7 @@ Class Door Extends ActionableSprite Implements ActionListener
 		If ( Not FlxG.Music Or Not FlxG.Music.active) Then
 			Game.Creak.FadeOut(2)
 			FlxG.PlayMusic(Assets.MUSIC_WHISTLE)
+			FlxG.Music.Volume = 0.6
 		End If
 	
 		If (Player.Items.Contains("key")) Then

@@ -23,7 +23,7 @@ Class Playground Extends BaseScene
 	End Method
 	
 	Method OnActivate:Void()
-		bgSound = FlxG.Play(Assets.SOUND_SWINGS,, True)
+		bgSound = FlxG.Play(Assets.SOUND_SWINGS, 0.4, True)
 	
 		state.AddInteractable(triggerGoToOutdoors)
 		background.Image = Assets.SCENE_PLAYGROUND

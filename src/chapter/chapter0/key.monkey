@@ -18,9 +18,10 @@ Class Key Extends TakeableSprite
 	End Method
 	
 	Method OnInteract:Void()
-		If (Not FlxG.Music Or Not FlxG.Music.active) Then
+		If ( Not FlxG.Music Or Not FlxG.Music.active) Then
 			Game.Creak.FadeOut(2)
 			FlxG.PlayMusic(Assets.MUSIC_WHISTLE)
+			FlxG.Music.Volume = 0.6
 		End If
 		
 		Super.OnInteract()
