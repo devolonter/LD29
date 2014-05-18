@@ -13,6 +13,7 @@ Class ChapterAssets
 	Const SPRITE_TRAIN:String = "chapter1_train"
 	Const SPRITE_TRAIN_BROKEN:String = "chapter1_train_broken"
 	Const SPRITE_TRAIN_FIXED:String = "chapter1_train_fixed"
+	Const SPRITE_TRAIN_SHADOW:String = "chapter1_train_shadow"
 	Const SPRITE_WHISTLE_IDLE:String = "chapter1_whistle_idle"
 	Const SPRITE_WHISTLE_ON:String = "chapter1_whistle_on"
 	Const SPRITE_DEAD_BODY:String = "chapter1_dead_body"
@@ -37,6 +38,7 @@ Class ChapterAssets
 		FlxAssetsManager.AddImage(SPRITE_TRAIN, "chapter/1/train.png")
 		FlxAssetsManager.AddImage(SPRITE_TRAIN_BROKEN, "chapter/1/train_broken.png")
 		FlxAssetsManager.AddImage(SPRITE_TRAIN_FIXED, "chapter/1/train_fixed.png")
+		FlxAssetsManager.AddImage(SPRITE_TRAIN_SHADOW, "chapter/1/train_shadow.png")
 		FlxAssetsManager.AddImage(SPRITE_WHISTLE_IDLE, "chapter/1/whistle_idle.png")
 		FlxAssetsManager.AddImage(SPRITE_WHISTLE_ON, "chapter/1/whistle_on.png")
 		FlxAssetsManager.AddImage(SPRITE_DEAD_BODY, "chapter/1/dead_body.png")
@@ -62,6 +64,7 @@ Class ChapterAssets
 		preloader.LoadGraphic(SPRITE_TRAIN)
 		preloader.LoadGraphic(SPRITE_TRAIN_BROKEN)
 		preloader.LoadGraphic(SPRITE_TRAIN_FIXED)
+		preloader.LoadGraphic(SPRITE_TRAIN_SHADOW)
 		preloader.LoadGraphic(SPRITE_WHISTLE_IDLE)
 		preloader.LoadGraphic(SPRITE_WHISTLE_ON)
 		preloader.LoadGraphic(SPRITE_DEAD_BODY)
