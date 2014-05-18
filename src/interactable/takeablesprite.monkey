@@ -22,6 +22,7 @@ Class TakeableSprite Extends ActionableSprite Implements ActionListener
 	End Method
 	
 	Method OnAction:Void(action:Action)
+		FlxG.Play(Assets.SOUND_TAKE)
 		Player.Items.Insert(name)
 		Kill()
 	End Method

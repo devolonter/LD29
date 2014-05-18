@@ -26,6 +26,7 @@ Class Assets
 	Const SOUND_OWL:String = "owl"
 	Const SOUND_CREAK:String = "creak"
 	Const SOUND_STEPS:String = "steps"
+	Const SOUND_TAKE:String = "take"
 	
 	Function Init:Void()
 		FlxAssetsManager.AddCursor(CURSOR_DEFAULT, "ui/mouse/default.png")
@@ -52,6 +53,7 @@ Class Assets
 		FlxAssetsManager.AddSound(SOUND_OWL, "fx/owl.mp3")
 		FlxAssetsManager.AddSound(SOUND_CREAK, "fx/creak.mp3")
 		FlxAssetsManager.AddSound(SOUND_STEPS, "fx/steps.mp3")
+		FlxAssetsManager.AddSound(SOUND_TAKE, "fx/take.mp3")
 	End Function
 	
 	Function Load:Void()
