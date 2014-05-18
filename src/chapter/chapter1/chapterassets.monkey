@@ -32,6 +32,7 @@ Class ChapterAssets
 	Const SOUND_GIRL_FALL:String = "chapter1_girl_fall"
 	Const SOUND_WINDOW:String = "chapter1_window"
 	Const SOUND_ROAR:String = "chapter1_roar"
+	Const SOUND_TRAIN_FALL:String = "chapter1_train_fall"
 	
 	Function Init:Void()
 		FlxAssetsManager.AddImage(SPRITE_BOY, "chapter/1/boy.png")
@@ -62,6 +63,7 @@ Class ChapterAssets
 		FlxAssetsManager.AddSound(SOUND_GIRL_FALL, "chapter/1/girl_fall.mp3")
 		FlxAssetsManager.AddSound(SOUND_WINDOW, "chapter/1/window.mp3")
 		FlxAssetsManager.AddSound(SOUND_ROAR, "chapter/1/roar.mp3")
+		FlxAssetsManager.AddSound(SOUND_TRAIN_FALL, "chapter/1/train_fall.mp3")
 	End Function
 	
 	Function Load:Void()

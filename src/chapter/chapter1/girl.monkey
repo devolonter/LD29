@@ -64,7 +64,7 @@ Class Girl Extends ActionableSprite Implements ActionListener
 		Select action
 			Case giveTrain
 				Player.Items.Remove("train")
-				'FlxG.Play(ChapterAssets.SOUND_LAUGHTER)
+				FlxG.Play(ChapterAssets.SOUND_LAUGHTER)
 			
 				If ( Not Chapter1.Boy.whistle) Then
 					Chapter1.Boy.train.Reset(480, 195 + Game.SCREEN_PADDING)
@@ -107,8 +107,14 @@ Class TrainQuestAction Extends LeaveAction Implements ActionListener
 	End Method
 	
 	Method OnAction:Void(action:Action)
-		Player.Items.Insert("quest.train")
-		New ScriptBrokenTrain(Game.Chapter.state.outdoors)
+		If ( Not Player.Items.Contains("quest.train")) Then
+			Player.Items.Insert("quest.train")
+			
+			Local s:FlxSound = FlxG.Play(ChapterAssets.SOUND_TRAIN_FALL)
+			s._SetTransform(s.Volume, 1)
+			
+			New ScriptBrokenTrain(Game.Chapter.state.outdoors)
+		End If
 	End Method
 
 End Class
