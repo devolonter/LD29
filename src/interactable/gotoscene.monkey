@@ -22,6 +22,7 @@ Class GoToScene Extends FlxObject Implements Interactable
 	End Method
 	
 	Method OnInteract:Void()
+		FlxG.Play(Assets.SOUND_STEPS)
 		FlxG.Mouse.Show(Assets.CURSOR_DEFAULT)
 		parent.SetSubState(scene)
 	End Method
